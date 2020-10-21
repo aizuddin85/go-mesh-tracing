@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	//"fmt"
 	//"io/ioutil"
 	"log"
 	"time"
@@ -21,7 +21,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("x-ot-span-context", r.Header.Get("x-ot-span-context"))
 
 
-	fmt.Fprintf(w,"timeservice x-request-id:" +  r.Header.Get("x-request-id") + "\n")
+	//fmt.Fprintf(w,"timeservice x-request-id:" +  r.Header.Get("x-request-id") + "\n")
 
 	now := time.Now()
         w.Write([]byte(now.String()))

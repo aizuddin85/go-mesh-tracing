@@ -40,10 +40,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 	for k, v := range r.Header {
 		for _, value := range  v {
-			fmt.Println(k, value)
+			fmt.Fprintf(w, k + ":" +  value + "\n")
 		}
 	}
-	fmt.Fprintf(w, string(body))
+	fmt.Fprintf(w, "\nReturned body:" + string(body) + "\n")
 
 	/*
 	req, err = http.NewRequest("GET", "http://service_a_envoy:8791/", nil)
